@@ -17,6 +17,7 @@ public abstract class Weapon : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+
     public virtual bool CanAttack()
     {
         return Time.time - lastAttackTime >= cooldown;
