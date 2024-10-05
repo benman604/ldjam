@@ -29,7 +29,7 @@ public class Player : Character
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
 
-        if (movement.magnitude > 0 || (Quaternion.angle(rotation) >= Quaternion.angle(transform.rotation) - 5 &&  (Quaternion.angle(rotation) <= Quaternion.angle(transform.rotation) + 5))) {
+        if (movement.magnitude > 0 || (Quaternion.Angle(rotation, transform.rotation) >= -5 && Quaternion.Angle(rotation, transform.rotation) <= 5)) {
             animator.speed = 1;
         } else {
             animator.speed = 0;
