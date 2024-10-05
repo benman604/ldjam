@@ -48,7 +48,7 @@ public class Player : Character
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            weapons[0].Attack();
+            weapons[1].Attack();
         }
     }
 

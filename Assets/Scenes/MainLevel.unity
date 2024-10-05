@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -192,7 +193,7 @@ MonoBehaviour:
   health: 50
   attackDamage: 10
   weapons:
-  - {fileID: 1335635254}
+  - {fileID: 0}
   attackEvery: 2
   delayBetweenAttacks: 0.5
 --- !u!212 &128443057
@@ -594,12 +595,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22e555e9d2bd45d387e4fc74a26f052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCollider: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   readyIndicator: {fileID: 0}
   parent: {fileID: 1195753330}
   weaponName: boss guy's weapon
   damage: 10
   cooldown: 1
   attackDuration: 0.2
+  lastAttackTime: -100
 --- !u!61 &530111959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1349,12 +1353,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22e555e9d2bd45d387e4fc74a26f052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCollider: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   readyIndicator: {fileID: 0}
   parent: {fileID: 1195753330}
   weaponName: boss guy's weapon
   damage: 10
   cooldown: 1
   attackDuration: 0.2
+  lastAttackTime: -100
 --- !u!61 &1018304365
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1586,10 +1593,10 @@ MonoBehaviour:
   health: 100
   attackDamage: 10
   weapons:
-  - {fileID: 530111958}
-  - {fileID: 1967936034}
-  - {fileID: 1305452899}
-  - {fileID: 1018304364}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   attackEvery: 1
   delayBetweenAttacks: 0.05
 --- !u!212 &1195753332
@@ -1739,12 +1746,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22e555e9d2bd45d387e4fc74a26f052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCollider: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   readyIndicator: {fileID: 0}
   parent: {fileID: 1195753330}
   weaponName: boss guy's weapon
   damage: 10
   cooldown: 1
   attackDuration: 0.2
+  lastAttackTime: -100
 --- !u!61 &1305452900
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1888,12 +1898,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22e555e9d2bd45d387e4fc74a26f052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCollider: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   readyIndicator: {fileID: 0}
   parent: {fileID: 128443055}
   weaponName: bad guy's weapon
   damage: 10
   cooldown: 1
   attackDuration: 0.1
+  lastAttackTime: -100
 --- !u!212 &1335635255
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2126,15 +2139,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1347212888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f22e555e9d2bd45d387e4fc74a26f052, type: 3}
+  m_Script: {fileID: 11500000, guid: 8405f75c656a548529d7843a65f18bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: swing
+  damage: 10
+  cooldown: 0.0000001
+  attackDuration: 0.02
   readyIndicator: {fileID: 0}
   parent: {fileID: 0}
-  weaponName: circle
-  damage: 10
-  cooldown: 1
-  attackDuration: 0.2
 --- !u!1 &1350137622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,15 +2288,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1350137622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f22e555e9d2bd45d387e4fc74a26f052, type: 3}
+  m_Script: {fileID: 11500000, guid: 8405f75c656a548529d7843a65f18bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readyIndicator: {fileID: 635481407}
-  parent: {fileID: 1477070283}
   weaponName: square
   damage: 10
-  cooldown: 2
-  attackDuration: 0.1
+  cooldown: 0.0000001
+  attackDuration: 0.02
+  readyIndicator: {fileID: 0}
+  parent: {fileID: 0}
 --- !u!1 &1365307979
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,10 +2581,12 @@ MonoBehaviour:
   health: 100
   attackDamage: 10
   weapons:
-  - {fileID: 1350137626}
+  - {fileID: 0}
   rb: {fileID: 1477070289}
   speed: 3
   smoothingFactor: 0.02
+  weapons:
+  - {fileID: 0}
 --- !u!212 &1477070285
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3183,12 +3198,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22e555e9d2bd45d387e4fc74a26f052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCollider: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   readyIndicator: {fileID: 0}
   parent: {fileID: 1195753330}
   weaponName: boss guy's weapon
   damage: 10
   cooldown: 1
   attackDuration: 0.2
+  lastAttackTime: -100
 --- !u!61 &1967936035
 BoxCollider2D:
   m_ObjectHideFlags: 0
