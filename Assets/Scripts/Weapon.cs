@@ -22,9 +22,9 @@ public class Weapon : MonoBehaviour
     }
 
     public void Attack() {
-        Debug.Log(weaponName + " attacked!");
+        // Debug.Log(weaponName + " attacked!");
         if (Time.time - lastAttackTime < cooldown) {
-            Debug.Log("Attack on cooldown!");
+            // Debug.Log("Attack on cooldown!");
             return;
         }
         List<Collider2D> hitColliders = new List<Collider2D>();
