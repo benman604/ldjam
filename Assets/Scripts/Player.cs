@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : Character
 {
     public Rigidbody2D rb;
-    public float speed = 5f;
+    public float speed = 1000f;
     Vector2 movement;
     public float smoothingFactor = 0.1f;
 
@@ -44,6 +44,10 @@ public class Player : Character
         rb.velocity = movement * speed;
 
         if (Input.GetMouseButtonDown(0)) {
+            weapons[0].Attack();
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             weapons[0].Attack();
         }
     }

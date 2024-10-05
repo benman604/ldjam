@@ -11,8 +11,8 @@ public class Weapon : MonoBehaviour
     public GameObject parent;
     public string weaponName;
     public int damage = 10;
-    public float cooldown = 1f;
-    public float attackDuration = 0.2f;
+    public float cooldown = 0.0000001f;
+    public float attackDuration = 0.02f;
 
     float lastAttackTime = -100f;
 
