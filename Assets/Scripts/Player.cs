@@ -9,10 +9,12 @@ public class Player : Character
     Vector2 movement;
     public float smoothingFactor = 0.1f;
 
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -20,11 +22,18 @@ public class Player : Character
     {
         Vector2 mouseToChar = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(mouseToChar.y, mouseToChar.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle - 90)), smoothingFactor);
+        Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, smoothingFactor);
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
+
+        if (movement.magnitude > 0 || (Quaternion.angle(rotation) >= Quaternion.angle(transform.rotation) - 5 &&  (Quaternion.angle(rotation) <= Quaternion.angle(transform.rotation) + 5))) {
+            animator.speed = 1;
+        } else {
+            animator.speed = 0;
+        }
 
         Vector3 mouseScreenPosition = Input.mousePosition;
         mouseScreenPosition.z = Camera.main.nearClipPlane; 
