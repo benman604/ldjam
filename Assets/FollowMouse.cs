@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FollowMouse : MonoBehaviour
 {
+    public Rigidbody2D rb;
     public float speed = 5f;
 
     // Start is called before the first frame update
@@ -19,7 +20,14 @@ public class FollowMouse : MonoBehaviour
         float angle = Mathf.Atan2(mouseToChar.y, mouseToChar.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
 
-        Vector2 moveDir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-        transform.position += new Vector3(moveDir.x, moveDir.y, 0) * Time.deltaTime * speed;
+        Vector2 moveDir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector2 targetPosition = (Vector2)transform.position + moveDir * Time.deltaTime * speed;
+        rb.MovePosition(targetPosition);
+
+        Vector3 mouseScreenPosition = Input.mousePosition;
+        mouseScreenPosition.z = Camera.main.nearClipPlane; 
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
+        targetPosition = transform.position + 0.2f * (mouseWorldPosition - transform.position);
+        Camera.main.transform.position = new Vector3(targetPosition.x, targetPosition.y, Camera.main.transform.position.z);
     }
 }
