@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowMouse : MonoBehaviour
+public class Player : Character
 {
     public Rigidbody2D rb;
     public float speed = 5f;
+    Vector2 movement;
+    public float smoothingFactor = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,16 +20,27 @@ public class FollowMouse : MonoBehaviour
     {
         Vector2 mouseToChar = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(mouseToChar.y, mouseToChar.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle - 90)), smoothingFactor);
 
-        Vector2 moveDir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        Vector2 targetPosition = (Vector2)transform.position + moveDir * Time.deltaTime * speed;
-        rb.MovePosition(targetPosition);
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        movement.Normalize();
 
         Vector3 mouseScreenPosition = Input.mousePosition;
         mouseScreenPosition.z = Camera.main.nearClipPlane; 
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
-        targetPosition = transform.position + 0.2f * (mouseWorldPosition - transform.position);
+        Vector2 targetPosition = transform.position + 0.2f * (mouseWorldPosition - transform.position);
         Camera.main.transform.position = new Vector3(targetPosition.x, targetPosition.y, Camera.main.transform.position.z);
+
+        rb.velocity = movement * speed;
+
+        if (Input.GetMouseButtonDown(0)) {
+            weapons[0].Attack();
+        }
+    }
+
+    void FixedUpdate()
+    {
+
     }
 }
