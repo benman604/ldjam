@@ -7,15 +7,9 @@ public class Character : MonoBehaviour
     public string characterName;
     public int health = 100;
     public const int maxHealth = 100;
-    public int attackDamage = 50;
+    public int attackDamage = 10;
 
     public List<Weapon> weapons;
-
-    SpriteRenderer spriteRenderer;
-
-    protected virtual void Start() {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
 
     public void TakeDamage(int damage)
     {
@@ -27,27 +21,10 @@ public class Character : MonoBehaviour
         }
 
         Debug.Log(characterName + " took " + damage + " damage! Remaining health: " + health);
-        StartCoroutine(FlashSpriteCoroutine());
     }
 
-    IEnumerator FlashSpriteCoroutine() {
-        if (spriteRenderer == null) {
-            Debug.LogError("SpriteRenderer is null!" + characterName);
-            yield break;
-        }
-        float duration = 1f;
-        float flashInterval = 0.1f;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < duration) {
-            spriteRenderer.enabled = !spriteRenderer.enabled;
-            yield return new WaitForSeconds(flashInterval);
-            elapsedTime += flashInterval;
-        }
-        spriteRenderer.enabled = true;
-    }
-
-    public void Die() {
+    public void Die()
+    {
         Debug.Log(characterName + " died!");
         Destroy(gameObject);
     }
