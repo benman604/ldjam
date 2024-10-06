@@ -11,6 +11,23 @@ public class Player : Character
 
     Animator animator;
 
+    public float speedSprinting = 9f;
+    public float stamina = 100f;
+    public float maxStamina = 100f;
+    public StaminaBar staminaBar;
+
+    public float staminaRegenRate = 0.5f;
+    public float staminaSprintingCost = 5f;
+    public float staminaDodgeCost = 50f;
+
+    float staminaCooldown = 2f;
+
+    public float dodgeSpeed = 20f;
+    public float dodgeDuration = 0.5f;
+
+    bool isDodging = false;
+    float timeSinceLastDodge = 0f;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -42,19 +59,42 @@ public class Player : Character
         Vector2 targetPosition = transform.position + 0.2f * (mouseWorldPosition - transform.position);
         Camera.main.transform.position = new Vector3(targetPosition.x, targetPosition.y, Camera.main.transform.position.z);
 
-        rb.velocity = movement * speed;
+        bool usingStamina = false;
+        float _speed = speed;
+        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0) {
+            _speed = speedSprinting;
+            stamina -= staminaSprintingCost;
+            usingStamina = true;
+        }
+
+        rb.velocity = movement * _speed;
 
         if (Input.GetMouseButtonDown(0)) {
             weapons[1].Attack();
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        if (Input.GetKeyDown(KeyCode.Space)) {
             weapons[0].Attack();
         }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
+        if (Input.GetKeyDown(KeyCode.Q)) {
             weapons[2].Attack();
         }
+
+        staminaBar.stamina = stamina;
+
+        if (!usingStamina)
+        {
+            staminaCooldown -= Time.deltaTime; // Reduce cooldown time
+            if (staminaCooldown <= 0f && stamina < maxStamina)
+            {
+                stamina += staminaRegenRate * Time.deltaTime;
+                stamina = Mathf.Min(stamina, maxStamina); // Clamp to max stamina
+            }
+        }
+        else
+        {
+            staminaCooldown = 2f; // Set cooldown duration after sprinting
+        }
+
     }
 
     void FixedUpdate()
