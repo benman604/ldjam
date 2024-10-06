@@ -35,7 +35,7 @@ public class Player : Character
         Vector2 mouseToChar = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(mouseToChar.y, mouseToChar.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, smoothingFactor);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 180 * Time.deltaTime);
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
