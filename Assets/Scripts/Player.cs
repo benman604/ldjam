@@ -5,15 +5,16 @@ using UnityEngine;
 public class Player : Character
 {
     public Rigidbody2D rb;
-    public float speed = 5f;
+    public float speed = 1000f;
     Vector2 movement;
     public float smoothingFactor = 0.1f;
 
     Animator animator;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         animator = GetComponent<Animator>();
     }
 
@@ -29,7 +30,7 @@ public class Player : Character
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
 
-        if (movement.magnitude > 0 || (Quaternion.Angle(rotation, transform.rotation) >= -5 && Quaternion.Angle(rotation, transform.rotation) <= 5)) {
+        if (movement.magnitude > 0 || Quaternion.Angle(rotation, transform.rotation) >= 1) {
             animator.speed = 1;
         } else {
             animator.speed = 0;
@@ -44,7 +45,15 @@ public class Player : Character
         rb.velocity = movement * speed;
 
         if (Input.GetMouseButtonDown(0)) {
+            weapons[1].Attack();
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             weapons[0].Attack();
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            weapons[2].Attack();
         }
     }
 
