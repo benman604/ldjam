@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: default_tiles_x_6
+  m_Name: grass wall
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -502099578, guid: 1109a905fa0f01e41ad0026975a8ed3a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c4f89f05a1b1d147b4fa805758728af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
