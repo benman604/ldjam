@@ -41,10 +41,14 @@ public class Player : Character
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
 
-        if (movement.magnitude > 0 || Quaternion.Angle(rotation, transform.rotation) >= 1) {
+        if (movement.magnitude > 0) {
             animator.speed = 1;
         } else {
             animator.speed = 0;
+        }
+
+        if (transform.rotation != rotation) {
+            animator.speed = 2;
         }
 
         Vector3 mouseScreenPosition = Input.mousePosition;
