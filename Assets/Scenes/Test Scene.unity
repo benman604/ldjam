@@ -4237,7 +4237,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -994190359
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   m_FlipX: 0
@@ -4619,7 +4619,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -994190359
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   m_FlipX: 0
@@ -9961,16 +9961,32 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5649991698503419317, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649991698503419317, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649991698503419317, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649991698503419317, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649991698503419317, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7065796
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5649991698503419317, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.70763355
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5888272941199879749, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6708891753690803237, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_Name
