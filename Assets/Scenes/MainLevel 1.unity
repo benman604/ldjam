@@ -542,6 +542,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 945139789334522113, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1948593083055565388, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -585,6 +589,18 @@ PrefabInstance:
     - target: {fileID: 3488610950040459367, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_PointLightOuterAngle
       value: 282.5618
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804046800328248581, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289310306736117289, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: maxOpacity
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306777004805872495, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5649991698503419317, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_LocalPosition.x
