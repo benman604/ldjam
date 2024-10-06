@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -575,7 +574,8 @@ GameObject:
   - component: {fileID: 530111961}
   - component: {fileID: 530111960}
   - component: {fileID: 530111959}
-  - component: {fileID: 530111958}
+  - component: {fileID: 530111962}
+  - component: {fileID: 530111963}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -583,27 +583,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &530111958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 530111957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f22e555e9d2bd45d387e4fc74a26f052, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCollider: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  readyIndicator: {fileID: 0}
-  parent: {fileID: 1195753330}
-  weaponName: boss guy's weapon
-  damage: 10
-  cooldown: 1
-  attackDuration: 0.2
-  lastAttackTime: -100
 --- !u!61 &530111959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -716,6 +695,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1195753333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &530111962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530111957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8405f75c656a548529d7843a65f18bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: 
+  damage: 10
+  cooldown: 0.0000001
+  attackDuration: 0.02
+  readyIndicator: {fileID: 0}
+  parent: {fileID: 1195753330}
+--- !u!114 &530111963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530111957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8405f75c656a548529d7843a65f18bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: 
+  damage: 10
+  cooldown: 0.0000001
+  attackDuration: 0.02
+  readyIndicator: {fileID: 0}
+  parent: {fileID: 0}
 --- !u!1 &635481406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1413,7 @@ GameObject:
   - component: {fileID: 1018304367}
   - component: {fileID: 1018304366}
   - component: {fileID: 1018304365}
-  - component: {fileID: 1018304364}
+  - component: {fileID: 1018304368}
   m_Layer: 0
   m_Name: Square (3)
   m_TagString: Untagged
@@ -1406,27 +1421,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1018304364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1018304363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f22e555e9d2bd45d387e4fc74a26f052, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCollider: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  readyIndicator: {fileID: 0}
-  parent: {fileID: 1195753330}
-  weaponName: boss guy's weapon
-  damage: 10
-  cooldown: 1
-  attackDuration: 0.2
-  lastAttackTime: -100
 --- !u!61 &1018304365
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1539,6 +1533,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1195753333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1018304368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018304363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8405f75c656a548529d7843a65f18bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: 
+  damage: 10
+  cooldown: 0.0000001
+  attackDuration: 0.02
+  readyIndicator: {fileID: 0}
+  parent: {fileID: 1195753330}
 --- !u!1 &1064405119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,10 +1670,10 @@ MonoBehaviour:
   health: 100
   attackDamage: 10
   weapons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 530111962}
+  - {fileID: 1967936038}
+  - {fileID: 1305452903}
+  - {fileID: 1018304368}
   attackEvery: 1
   delayBetweenAttacks: 0.05
 --- !u!212 &1195753332
@@ -1791,7 +1803,7 @@ GameObject:
   - component: {fileID: 1305452902}
   - component: {fileID: 1305452901}
   - component: {fileID: 1305452900}
-  - component: {fileID: 1305452899}
+  - component: {fileID: 1305452903}
   m_Layer: 0
   m_Name: Square (2)
   m_TagString: Untagged
@@ -1799,27 +1811,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1305452899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1305452898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f22e555e9d2bd45d387e4fc74a26f052, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCollider: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  readyIndicator: {fileID: 0}
-  parent: {fileID: 1195753330}
-  weaponName: boss guy's weapon
-  damage: 10
-  cooldown: 1
-  attackDuration: 0.2
-  lastAttackTime: -100
 --- !u!61 &1305452900
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1932,6 +1923,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1195753333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1305452903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305452898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8405f75c656a548529d7843a65f18bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: 
+  damage: 10
+  cooldown: 0.0000001
+  attackDuration: 0.02
+  readyIndicator: {fileID: 0}
+  parent: {fileID: 1195753330}
 --- !u!1 &1335635253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,8 +1951,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1335635257}
   - component: {fileID: 1335635255}
-  - component: {fileID: 1335635254}
   - component: {fileID: 1335635256}
+  - component: {fileID: 1335635258}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -1951,27 +1960,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1335635254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335635253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f22e555e9d2bd45d387e4fc74a26f052, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCollider: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  readyIndicator: {fileID: 0}
-  parent: {fileID: 128443055}
-  weaponName: bad guy's weapon
-  damage: 10
-  cooldown: 1
-  attackDuration: 0.1
-  lastAttackTime: -100
 --- !u!212 &1335635255
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2074,6 +2062,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 128443058}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1335635258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335635253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8405f75c656a548529d7843a65f18bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: 
+  damage: 10
+  cooldown: 0.0000001
+  attackDuration: 0.02
+  readyIndicator: {fileID: 0}
+  parent: {fileID: 128443055}
 --- !u!1 &1347212888
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,7 +2098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!58 &1347212889
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2189,7 +2195,7 @@ Transform:
   m_GameObject: {fileID: 1347212888}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.046267122, y: 0.1951887, z: 0}
+  m_LocalPosition: {x: 0.046267122, y: 0.1951887, z: 2}
   m_LocalScale: {x: 3.1374686, y: 2.289385, z: 2.935006}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2212,7 +2218,7 @@ MonoBehaviour:
   cooldown: 0.0000001
   attackDuration: 0.02
   readyIndicator: {fileID: 0}
-  parent: {fileID: 0}
+  parent: {fileID: 1477070283}
 --- !u!1 &1350137622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2360,8 +2366,8 @@ MonoBehaviour:
   damage: 10
   cooldown: 0.0000001
   attackDuration: 0.02
-  readyIndicator: {fileID: 0}
-  parent: {fileID: 0}
+  readyIndicator: {fileID: 635481407}
+  parent: {fileID: 1477070283}
 --- !u!1 &1365307979
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,12 +2652,11 @@ MonoBehaviour:
   health: 100
   attackDamage: 10
   weapons:
-  - {fileID: 0}
+  - {fileID: 1350137626}
+  - {fileID: 1347212892}
   rb: {fileID: 1477070289}
   speed: 3
   smoothingFactor: 0.02
-  weapons:
-  - {fileID: 0}
 --- !u!212 &1477070285
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3243,7 +3248,7 @@ GameObject:
   - component: {fileID: 1967936037}
   - component: {fileID: 1967936036}
   - component: {fileID: 1967936035}
-  - component: {fileID: 1967936034}
+  - component: {fileID: 1967936038}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -3251,27 +3256,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1967936034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967936033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f22e555e9d2bd45d387e4fc74a26f052, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCollider: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  readyIndicator: {fileID: 0}
-  parent: {fileID: 1195753330}
-  weaponName: boss guy's weapon
-  damage: 10
-  cooldown: 1
-  attackDuration: 0.2
-  lastAttackTime: -100
 --- !u!61 &1967936035
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3384,6 +3368,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1195753333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1967936038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967936033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8405f75c656a548529d7843a65f18bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: 
+  damage: 10
+  cooldown: 0.0000001
+  attackDuration: 0.02
+  readyIndicator: {fileID: 0}
+  parent: {fileID: 1195753330}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
