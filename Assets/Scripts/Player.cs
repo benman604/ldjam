@@ -7,7 +7,7 @@ public class Player : Character
     public Rigidbody2D rb;
     public float speed = 1000f;
     Vector2 movement;
-    public float smoothingFactor = 0.1f;
+    public float rotationDegreesPerSecond = 180f;
 
     Animator animator;
 
@@ -35,7 +35,7 @@ public class Player : Character
         Vector2 mouseToChar = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(mouseToChar.y, mouseToChar.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 180 * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotationDegreesPerSecond * Time.deltaTime);
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -66,10 +66,10 @@ public class Player : Character
         rb.velocity = movement * _speed;
 
         if (Input.GetMouseButtonDown(0)) {
-            weapons[1].Attack();
+            weapons[0].Attack();
         }
         if (Input.GetKeyDown(KeyCode.Space)) {
-            weapons[0].Attack();
+            weapons[1].Attack();
         }
         if (Input.GetKeyDown(KeyCode.Q)) {
             weapons[2].Attack();

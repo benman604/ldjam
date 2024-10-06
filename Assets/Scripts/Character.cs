@@ -6,7 +6,7 @@ public class Character : MonoBehaviour
 {
     public string characterName;
     public int health = 100;
-    public const int maxHealth = 100;
+    public int maxHealth = 100;
     public int attackDamage = 50;
 
     public List<Weapon> weapons;

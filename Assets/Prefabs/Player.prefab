@@ -254,8 +254,8 @@ Transform:
   m_GameObject: {fileID: 3495881178813548169}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.046267122, y: 0.1951887, z: 2}
-  m_LocalScale: {x: 3.1374686, y: 2.289385, z: 2.935006}
+  m_LocalPosition: {x: 0.046267, y: 1.28, z: 2}
+  m_LocalScale: {x: 6.076963, y: 4.43431, z: 5.684813}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8072151478008649094}
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: swing
   damage: 10
-  cooldown: 0.0000001
+  cooldown: 3
   attackDuration: 0.02
   readyIndicator: {fileID: 0}
   parent: {fileID: 6708891753690803237}
@@ -459,6 +459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 30746961485909663}
   - component: {fileID: 3972632655341806834}
+  - component: {fileID: 5289310306736117289}
   m_Layer: 0
   m_Name: mask3
   m_TagString: Untagged
@@ -522,8 +523,8 @@ SpriteRenderer:
   m_SortingLayerID: -994190359
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bc2e9845ffc6a4944aa41b6688558d2c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1b97e2bf51ebb458bbcb0a1ae1a01fe1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.20392157}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -533,6 +534,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5289310306736117289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5306777004805872495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf012a2ae5ec491cb83ddf8e39614e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthRef: {fileID: 8942655095741822654}
+  maxOpacity: 0.5
 --- !u!1 &5559342947639443833
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 
   health: 100
+  maxHealth: 100
   attackDamage: 10
   weapons:
   - {fileID: 2745697296893109837}
@@ -861,17 +877,13 @@ MonoBehaviour:
   - {fileID: 8046462219951516858}
   rb: {fileID: 1740419584217477308}
   speed: 3
-  smoothingFactor: 0.02
+  rotationDegreesPerSecond: 180
   speedSprinting: 9
   stamina: 100
   maxStamina: 100
   staminaBar: {fileID: 0}
   staminaRegenRate: 0.5
   staminaSprintingCost: 0.1
-  staminaDodgeCost: 10
-  minStaminaPercentage: 20
-  dodgeSpeed: 20
-  dodgeDuration: 0.5
 --- !u!50 &1740419584217477308
 Rigidbody2D:
   serializedVersion: 4
