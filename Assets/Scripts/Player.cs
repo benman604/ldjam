@@ -92,7 +92,7 @@ public class Player : Character
         }
         else
         {
-            staminaCooldown = 2f;
+            staminaCooldown = 1f;
         }
 
     }
