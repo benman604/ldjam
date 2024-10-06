@@ -51,6 +51,10 @@ public class Player : Character
         {
             weapons[0].Attack();
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            weapons[2].Attack();
+        }
     }
 
     void FixedUpdate()
