@@ -14,7 +14,7 @@ public class Spit : Weapon
             return;
         }
 
-        Debug.Log($"{weaponName} attacked!");
+        Debug.Log($"{weaponName} spit!");
 
         GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
         Projectile projectileScript = projectile.AddComponent<Projectile>();
