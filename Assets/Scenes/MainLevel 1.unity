@@ -167,7 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 100241121}
   - component: {fileID: 100241120}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,6 +542,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 945139789334522113, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1948593083055565388, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2222446008331755808, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -560,13 +568,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2222446008331755808, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_PointLightOuterAngle
-      value: 93.75297
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 2222446008331755808, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_PointLightInnerRadius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222446008331755808, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_PointLightOuterRadius
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2981203804184270635, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488610950040459367, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_ShadowIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488610950040459367, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_PointLightOuterAngle
+      value: 282.5618
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804046800328248581, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289310306736117289, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: maxOpacity
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306777004805872495, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -881,7 +913,7 @@ Transform:
   m_GameObject: {fileID: 635481406}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.38, y: -0.8, z: -0.00064771273}
+  m_LocalPosition: {x: 0.55, y: -0.3, z: -0.00064771273}
   m_LocalScale: {x: 0.09379373, y: 0.09733712, z: 0.29299477}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1223,7 +1255,7 @@ Transform:
   m_GameObject: {fileID: 900136156}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.184, y: -1.136, z: 1}
+  m_LocalPosition: {x: -0.05, y: -0.63, z: 1}
   m_LocalScale: {x: 1.1628091, y: 0.03877277, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1492,7 +1524,7 @@ GameObject:
   - component: {fileID: 1145451998}
   - component: {fileID: 1145452000}
   - component: {fileID: 1145451999}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Background Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
