@@ -18,15 +18,9 @@ public class Player : Character
 
     public float staminaRegenRate = 0.5f;
     public float staminaSprintingCost = 5f;
-    public float staminaDodgeCost = 50f;
+    bool isSprinting = false;
 
     float staminaCooldown = 2f;
-
-    public float dodgeSpeed = 20f;
-    public float dodgeDuration = 0.5f;
-
-    bool isDodging = false;
-    float timeSinceLastDodge = 0f;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -61,10 +55,12 @@ public class Player : Character
 
         bool usingStamina = false;
         float _speed = speed;
+        isSprinting = false;
         if (Input.GetKey(KeyCode.LeftShift) && stamina > 0) {
             _speed = speedSprinting;
             stamina -= staminaSprintingCost;
             usingStamina = true;
+            isSprinting = true;
         }
 
         rb.velocity = movement * _speed;
@@ -83,22 +79,23 @@ public class Player : Character
 
         if (!usingStamina)
         {
-            staminaCooldown -= Time.deltaTime; // Reduce cooldown time
+            staminaCooldown -= Time.deltaTime;
             if (staminaCooldown <= 0f && stamina < maxStamina)
             {
                 stamina += staminaRegenRate * Time.deltaTime;
-                stamina = Mathf.Min(stamina, maxStamina); // Clamp to max stamina
+                stamina = Mathf.Min(stamina, maxStamina);
             }
         }
         else
         {
-            staminaCooldown = 2f; // Set cooldown duration after sprinting
+            staminaCooldown = 2f;
         }
 
     }
 
-    void FixedUpdate()
-    {
-
+    public override void TakeDamage(int damage) {
+        if (!isSprinting) {
+            base.TakeDamage(damage);
+        }
     }
 }
