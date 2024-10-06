@@ -11,6 +11,17 @@ public class Player : Character
 
     Animator animator;
 
+    public float speedSprinting = 9f;
+    public float stamina = 100f;
+    public float maxStamina = 100f;
+    public StaminaBar staminaBar;
+
+    public float staminaRegenRate = 0.5f;
+    public float staminaSprintingCost = 5f;
+    bool isSprinting = false;
+
+    float staminaCooldown = 2f;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -24,7 +35,7 @@ public class Player : Character
         Vector2 mouseToChar = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(mouseToChar.y, mouseToChar.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, smoothingFactor);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 180 * Time.deltaTime);
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -42,23 +53,49 @@ public class Player : Character
         Vector2 targetPosition = transform.position + 0.2f * (mouseWorldPosition - transform.position);
         Camera.main.transform.position = new Vector3(targetPosition.x, targetPosition.y, Camera.main.transform.position.z);
 
-        rb.velocity = movement * speed;
+        bool usingStamina = false;
+        float _speed = speed;
+        isSprinting = false;
+        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0) {
+            _speed = speedSprinting;
+            stamina -= staminaSprintingCost;
+            usingStamina = true;
+            isSprinting = true;
+        }
+
+        rb.velocity = movement * _speed;
 
         if (Input.GetMouseButtonDown(0)) {
             weapons[1].Attack();
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        if (Input.GetKeyDown(KeyCode.Space)) {
             weapons[0].Attack();
         }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
+        if (Input.GetKeyDown(KeyCode.Q)) {
             weapons[2].Attack();
         }
+
+        staminaBar.stamina = stamina;
+
+        if (!usingStamina)
+        {
+            staminaCooldown -= Time.deltaTime;
+            if (staminaCooldown <= 0f && stamina < maxStamina)
+            {
+                stamina += staminaRegenRate * Time.deltaTime;
+                stamina = Mathf.Min(stamina, maxStamina);
+            }
+        }
+        else
+        {
+            staminaCooldown = 2f;
+        }
+
     }
 
-    void FixedUpdate()
-    {
-
+    public override void TakeDamage(int damage) {
+        if (!isSprinting) {
+            base.TakeDamage(damage);
+        }
     }
 }
