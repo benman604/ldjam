@@ -4746,7 +4746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 898665395}
   - component: {fileID: 898665394}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5464,10 +5464,10 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 23f330812b46811600000000a9a7958ee9dbbdc4
+  m_ApplyToSortingLayers: 
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -5523,7 +5523,7 @@ GameObject:
   - component: {fileID: 1355531961}
   - component: {fileID: 1355531963}
   - component: {fileID: 1355531962}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Background Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9873,6 +9873,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2222446008331755808, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_ShadowIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222446008331755808, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.298
       objectReference: {fileID: 0}
@@ -9880,9 +9884,37 @@ PrefabInstance:
       propertyPath: m_PointLightOuterRadius
       value: 6.7524176
       objectReference: {fileID: 0}
+    - target: {fileID: 2222446008331755808, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222446008331755808, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[0]
+      value: -994190359
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222446008331755808, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[1]
+      value: 377570859
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222446008331755808, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: -2127498461
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222446008331755808, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222446008331755808, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[4]
+      value: -1902794839
+      objectReference: {fileID: 0}
     - target: {fileID: 2745697296893109837, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: cooldown
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981203804184270635, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3931344581298454560, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_Color.a
@@ -10031,7 +10063,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 23f330812b46811600000000a9a7958ee9dbbdc4
+  m_ApplyToSortingLayers: a9a7958ee9dbbdc4
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
