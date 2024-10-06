@@ -34,6 +34,7 @@ public class Projectile : MonoBehaviour
             Character character = other.GetComponent<Character>();
             if (character != null)
             {
+                Debug.Log("The damage has been dealt by the projectile.");
                 character.TakeDamage(damage);
                 Destroy(gameObject);
             }
