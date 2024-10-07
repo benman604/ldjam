@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,11 +32,11 @@ public static list<NodeBase> FindPath(NodeBase startNode, NodeBase targetNode)
         processed.Add(current);
         toSearch.Remove(current);
 
-        if(current == targetNode)
+        if (current == targetNode)
         {
             var currentPathTile = targetNode;
             var path = new List<NodeBase>();
-            while(currentPathTile != startNode)
+            while (currentPathTile != startNode)
             {
                 path.Add(currentPathTile);
                 currentPathTile = currentPathTile.Connection;
