@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterSFX : MonoBehaviour
 {
-    public AudioSource audioSource;
+    AudioSource audioSource;
     public AudioClip biteSound;
     public AudioClip dashSound;
     public AudioClip damageSound;

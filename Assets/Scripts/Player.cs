@@ -21,7 +21,8 @@ public class Player : Character
     public float staminaRegenRate = 0.5f;
     public float staminaSprintingCost = 5f;
     public float notGoingForwardMultiplier = 0.5f;
-    public CharacterSFX characterSFX
+    public CharacterSFX characterSFX;
+    public float timeBetweenSteps = 0.75f;
 
     float staminaCooldown = 2f;
     bool isSprinting = false;
@@ -38,6 +39,16 @@ public class Player : Character
         // animator = GetComponent<Animator>();
         animationSwitcher = GetComponent<AnimationSwitcher>();
         UpdateHealthBar();
+        StartCoroutine(PlayAudioIfWalking());
+    }
+
+    IEnumerator PlayAudioIfWalking() {
+        Debug.Log(movement);
+        if (!(movement.x == 0 && movement.y == 0)) {
+            characterSFX.PlayMoveSound();
+        }
+        yield return new WaitForSeconds(timeBetweenSteps);
+        StartCoroutine(PlayAudioIfWalking());
     }
 
     void Update()
@@ -84,6 +95,12 @@ public class Player : Character
             stamina -= staminaSprintingCost;
             usingStamina = true;
             isSprinting = true;
+
+            // characterSFX.PlayDashSound();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && stamina > 0) {
+            characterSFX.PlayDashSound();
         }
 
         rb.velocity = movement * _speed;
@@ -91,6 +108,12 @@ public class Player : Character
         if (Input.GetMouseButtonDown(0))
         {
             weapons[0].Attack();
+
+
+            if (weapons[0].CanAttack() == true)
+            {
+                characterSFX.PlayBiteSound();
+            }
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
