@@ -461,6 +461,10 @@ PrefabInstance:
       propertyPath: attackDuration
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 2745697296893109837, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: readyIndicator
+      value: 
+      objectReference: {fileID: 635481407}
     - target: {fileID: 2981203804184270635, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -500,7 +504,7 @@ PrefabInstance:
     - target: {fileID: 4827438965692627009, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: readyIndicator
       value: 
-      objectReference: {fileID: 635481407}
+      objectReference: {fileID: 0}
     - target: {fileID: 5289310306736117289, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: maxOpacity
       value: 0.2

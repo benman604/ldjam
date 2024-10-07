@@ -241,8 +241,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: bad guy 1
-  health: 50
-  maxHealth: 100
+  health: 30
+  maxHealth: 30
   attackDamage: 10
   isDead: 0
   weapons:
