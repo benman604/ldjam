@@ -524,9 +524,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: swing
-  damage: 10
-  cooldown: 3
-  attackDuration: 0.02
+  damage: 20
+  cooldown: 2.5
+  attackDuration: 0.07
   readyIndicator: {fileID: 0}
   parent: {fileID: 6708891753690803237}
 --- !u!1 &4804046800328248581

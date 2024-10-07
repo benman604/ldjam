@@ -74,7 +74,7 @@ public class Player : Character
         bool usingStamina = false;
         float _speed = speed;
         isSprinting = false;
-        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)
+        if (Input.GetKey(KeyCode.Space) && stamina > 0)
         {
             _speed = speedSprinting;
             stamina -= staminaSprintingCost;
