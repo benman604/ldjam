@@ -744,12 +744,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4627892299186785186, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.1918285
+      objectReference: {fileID: 0}
+    - target: {fileID: 4627892299186785186, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.3904382
+      value: 1.9758036
+      objectReference: {fileID: 0}
+    - target: {fileID: 4627892299186785186, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 4627892299186785186, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.802
+      value: 2.55
       objectReference: {fileID: 0}
     - target: {fileID: 4804046800328248581, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_IsActive
@@ -801,7 +809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6595858383050568904, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6708891753690803237, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_Name
@@ -830,7 +838,7 @@ PrefabInstance:
     - target: {fileID: 7605927381599006353, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+      objectReference: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
     - target: {fileID: 8742288022148415795, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_Color.a
       value: 0.7607843
@@ -883,8 +891,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.3
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6595858383050568904, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 136883310312102867, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
@@ -906,60 +913,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6708891753690803237, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1921078975}
-    - targetCorrespondingSourceObject: {fileID: 3495881178813548169, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 527786847}
   m_SourcePrefab: {fileID: 100100000, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
---- !u!1 &527786846 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3495881178813548169, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
-  m_PrefabInstance: {fileID: 527786845}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &527786847
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 527786846}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.007175833}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.0012031}
-  m_EdgeRadius: 0
 --- !u!1001 &542957722
 PrefabInstance:
   m_ObjectHideFlags: 0
