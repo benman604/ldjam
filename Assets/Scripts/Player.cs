@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; // Include UI components
+using UnityEngine.UI;
 
 public class Player : Character
 {
@@ -11,10 +11,8 @@ public class Player : Character
     Vector2 movement;
     public float rotationDegreesPerSecond = 180f;
 
-    // Animator animator;
     AnimationSwitcher animationSwitcher;
 
-    // Stamina Variables
     public float speedSprinting = 9f;
     public float stamina = 100f;
     public float maxStamina = 100f;
