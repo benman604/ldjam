@@ -9,7 +9,8 @@ public class Player : Character
     Vector2 movement;
     public float rotationDegreesPerSecond = 180f;
 
-    Animator animator;
+    // Animator animator;
+    AnimationSwitcher animationSwitcher;
 
     public float speedSprinting = 9f;
     public float stamina = 100f;
@@ -26,12 +27,16 @@ public class Player : Character
     protected override void Start()
     {
         base.Start();
-        animator = GetComponent<Animator>();
+        // animator = GetComponent<Animator>();
+        animationSwitcher = GetComponent<AnimationSwitcher>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isDead) {
+            return;
+        }
         Vector2 mouseToChar = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(mouseToChar.y, mouseToChar.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
@@ -41,15 +46,17 @@ public class Player : Character
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
 
-        if (movement.magnitude > 0) {
-            animator.speed = 1;
+        if (movement.magnitude > 0 || transform.rotation != rotation) {
+            // animator.speed = 1;
+            animationSwitcher.SetAnimation("walking");
         } else {
-            animator.speed = 0;
+            // animator.speed = 0;
+            animationSwitcher.SetAnimation("idle");
         }
 
-        if (transform.rotation != rotation) {
-            animator.speed = 2;
-        }
+        // if (transform.rotation != rotation) {
+        //     animator.speed = 2;
+        // }
 
         Vector3 mouseScreenPosition = Input.mousePosition;
         mouseScreenPosition.z = Camera.main.nearClipPlane; 
@@ -101,5 +108,11 @@ public class Player : Character
         if (!isSprinting) {
             base.TakeDamage(damage);
         }
+    }
+
+    public override void Die() {
+        animationSwitcher.SetAnimation("die");
+        isDead = true;
+        Debug.Log("Game Over!");
     }
 }

@@ -8,6 +8,7 @@ public class Character : MonoBehaviour
     public int health = 100;
     public int maxHealth = 100;
     public int attackDamage = 50;
+    public bool isDead = false;
 
     public List<Weapon> weapons;
 
@@ -19,6 +20,10 @@ public class Character : MonoBehaviour
 
     public virtual void TakeDamage(int damage)
     {
+        if (isDead) {
+            return;
+        }
+
         health -= damage;
         if (health <= 0)
         {
@@ -47,8 +52,9 @@ public class Character : MonoBehaviour
         spriteRenderer.enabled = true;
     }
 
-    public void Die() {
+    public virtual void Die() {
         Debug.Log(characterName + " died!");
+        isDead = true;
         Destroy(gameObject);
     }
 }
