@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class HealthPackSpawner : MonoBehaviour
 {
     public GameObject HealthPack;  // The prefab for the health pack
-    public int numberOfHealthPacks = 10;  // Number of health packs to spawn
+    public int numberOfHealthPacks = 20;  // Number of health packs to spawn
     public float spawnRadius = 50f;      // Radius in which to spawn the health packs
     public LayerMask groundLayer;        // Layer for ground if needed to filter collisions
 

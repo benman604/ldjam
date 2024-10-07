@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Flower
   - Spider
+  - HealthPack
   layers:
   - Default
   - TransparentFX
