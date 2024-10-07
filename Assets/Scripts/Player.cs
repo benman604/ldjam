@@ -88,14 +88,6 @@ public class Player : Character
         {
             weapons[0].Attack();
         }
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        {
-            weapons[1].Attack();
-        }
-        if (Input.GetKeyDown(KeyCode.Q)) 
-        {
-            weapons[2].Attack();
-        }
 
         staminaBar.stamina = stamina;
 
