@@ -7,8 +7,8 @@ public class CharacterSFX : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip biteSound;
     public AudioClip dashSound;
-    public AudioClip spitSound;
     public AudioClip damageSound;
+    public AudioClip[] moveSound;
 
     void Start()
     {
@@ -25,13 +25,22 @@ public class CharacterSFX : MonoBehaviour
         audioSource.PlayOneShot(dashSound);
     }
 
-    public void PlaySpitSound()
-    {
-        audioSource.PlayOneShot(spitSound);
-    }
-
     public void PlayDamageSound()
     {
         audioSource.PlayOneShot(damageSound);
+    }
+
+    public void PlayMoveSound()
+    {
+        AudioClip randomMoveSound = GetRandomClip(moveSound); 
+        audioSource.PlayOneShot(randomMoveSound); 
+    }
+
+    // Helper function to get a random clip from an array
+    private AudioClip GetRandomClip(AudioClip[] clips)
+    {
+        if (clips.Length == 0) return null; // Return if the array is empty
+        int randomIndex = Random.Range(0, clips.Length); // Get a random index
+        return clips[randomIndex]; // Return the random clip
     }
 }
