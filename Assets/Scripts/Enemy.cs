@@ -55,7 +55,7 @@ public class Enemy : Character
     {
         // Move the enemy towards the player if the player is not in attack range
         float distanceToPlayer = Vector2.Distance(transform.position, target.position);
-        if (!isLunging && distanceToPlayer > closeEnough) // Only move if not lunging
+        if (!isLunging && distanceToPlayer > closeEnough && distanceToPlayer < attackRange) // Only move if not lunging
         {
             agent.SetDestination(target.position);
         }

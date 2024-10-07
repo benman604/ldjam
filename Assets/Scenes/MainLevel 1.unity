@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (3)
@@ -574,6 +578,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (14)
@@ -635,6 +643,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (1)
@@ -775,6 +787,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (5)
@@ -1094,6 +1110,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (16)
@@ -1155,6 +1175,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (2)
@@ -1394,6 +1418,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (10)
@@ -1487,6 +1515,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (7)
@@ -5789,6 +5821,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (12)
@@ -5855,6 +5891,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (6)
@@ -5916,6 +5956,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (15)
@@ -5977,6 +6021,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (17)
@@ -6141,6 +6189,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (4)
@@ -6202,6 +6254,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (13)
@@ -6331,6 +6387,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (8)
@@ -6449,6 +6509,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (9)
@@ -21795,6 +21859,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1400782246}
+    - target: {fileID: 852828208420822592, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2583591240293569156, guid: fc0a42ca457e2423e86692fbed591d99, type: 3}
       propertyPath: m_Name
       value: Spider (11)
