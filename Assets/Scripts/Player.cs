@@ -189,7 +189,9 @@ public class Player : Character
         }
         else if (other.CompareTag("HealthPack"))
         {
+
             TakeDamage(-10);
+            Destroy(other.gameObject);
         }
     }
 }
