@@ -4411,6 +4411,63 @@ Transform:
   - {fileID: 180420489}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &429595536
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 84530917965334139, guid: 5b823dd39f73c6d4a8d5bad260e838fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.9622319
+      objectReference: {fileID: 0}
+    - target: {fileID: 84530917965334139, guid: 5b823dd39f73c6d4a8d5bad260e838fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.7786784
+      objectReference: {fileID: 0}
+    - target: {fileID: 84530917965334139, guid: 5b823dd39f73c6d4a8d5bad260e838fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 84530917965334139, guid: 5b823dd39f73c6d4a8d5bad260e838fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 84530917965334139, guid: 5b823dd39f73c6d4a8d5bad260e838fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 84530917965334139, guid: 5b823dd39f73c6d4a8d5bad260e838fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 84530917965334139, guid: 5b823dd39f73c6d4a8d5bad260e838fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 84530917965334139, guid: 5b823dd39f73c6d4a8d5bad260e838fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 84530917965334139, guid: 5b823dd39f73c6d4a8d5bad260e838fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 84530917965334139, guid: 5b823dd39f73c6d4a8d5bad260e838fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680536555472308681, guid: 5b823dd39f73c6d4a8d5bad260e838fe, type: 3}
+      propertyPath: m_Name
+      value: HealthPack
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b823dd39f73c6d4a8d5bad260e838fe, type: 3}
 --- !u!1 &521784656
 GameObject:
   m_ObjectHideFlags: 0
@@ -5020,9 +5077,16 @@ MonoBehaviour:
   - {fileID: 1103163124}
   attackEvery: 5
   delayBetweenAttacks: 0.05
-  playerTransform: {fileID: 1604870846}
   followSpeed: 0.5
   attackRange: 1.5
+  closeEnough: 0.1
+  lungeSpeed: 16
+  lungeDuration: 0.25
+  minLungeCooldown: 2
+  maxLungeCooldown: 5
+  spiderSFX: {fileID: 0}
+  timeBetweenSteps: 1.492
+  target: {fileID: 0}
 --- !u!212 &1028839229
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10336,3 +10400,4 @@ SceneRoots:
   - {fileID: 1136777467}
   - {fileID: 1736171167}
   - {fileID: 297285880}
+  - {fileID: 429595536}

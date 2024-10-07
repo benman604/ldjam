@@ -190,5 +190,11 @@ public class Player : Character
             // Destroy the flower GameObject
             Destroy(other.gameObject);
         }
+        else if (other.CompareTag("HealthPack"))
+        {
+
+            TakeDamage(-10);
+            Destroy(other.gameObject);
+        }
     }
 }
