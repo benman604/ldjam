@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
-
 using UnityEngine;
+
+using UnityEngine.SceneManagement;
 using UnityEngine.UI; // Make sure to include this for using UI components
 
 public class Player : Character
