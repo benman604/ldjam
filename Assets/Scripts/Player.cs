@@ -84,10 +84,13 @@ public class Player : Character
 
         rb.velocity = movement * _speed;
 
-        if (Input.GetMouseButtonDown(0)) 
-        {
+        if (Input.GetMouseButtonDown(0)) {
             weapons[0].Attack();
         }
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            weapons[1].Attack();
+        }
+
 
         staminaBar.stamina = stamina;
 

@@ -892,8 +892,8 @@ Transform:
   m_GameObject: {fileID: 6633000600946697788}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 0.607, z: 0}
-  m_LocalScale: {x: 1.6432569, y: 0.5915638, z: 1}
+  m_LocalPosition: {x: 0.01, y: 1.3, z: 0}
+  m_LocalScale: {x: 0.8, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8072151478008649094}
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: square
   damage: 10
-  cooldown: 0.0000001
+  cooldown: 2
   attackDuration: 0.02
   readyIndicator: {fileID: 0}
   parent: {fileID: 6708891753690803237}
@@ -1130,7 +1130,7 @@ MonoBehaviour:
   - {fileID: 8046462219951516858}
   rb: {fileID: 1740419584217477308}
   speed: 3
-  rotationDegreesPerSecond: 180
+  rotationDegreesPerSecond: 720
   speedSprinting: 9
   stamina: 100
   maxStamina: 100
