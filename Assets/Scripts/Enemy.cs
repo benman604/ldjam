@@ -4,61 +4,84 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class Enemy : Character
-{   
+{
     public float attackEvery = 2f;
     public float delayBetweenAttacks = 0.5f;
-    public float followSpeed = 0.5f;    // Speed at which the enemy follows the player
-    public float attackRange = 1.5f;  // Distance at which the enemy stops following and starts attacking
-    public float closeEnough = 0.1f;  // Distance at which the enemy is close enough to the player
+    public float followSpeed = 0.5f;  // Normal speed
+    public float attackRange = 1.5f;  // Distance at which the enemy starts attacking
+    public float closeEnough = 0.1f;  // Distance to stop following
+    public float lungeSpeed = 16f;     // Speed during lunge
+    public float lungeDuration = 0.25f; // How long the lunge lasts
+    public float minLungeCooldown = 2f; // Minimum time before next lunge
+    public float maxLungeCooldown = 5f; // Maximum time before next lunge
+
+    private bool isLunging = false;
 
     [SerializeField] Transform target;
-
     UnityEngine.AI.NavMeshAgent agent;
-    
+
     protected override void Start()
     {
         base.Start();
         if (weapons == null || weapons.Count == 0)
         {
             Debug.LogError("No weapons assigned to the enemy!");
-            return; 
+            return;
         }
         InvokeRepeating("RepeatAttack", 1f, attackEvery);
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         agent.speed = followSpeed;
+
+        StartCoroutine(HandleLunge()); // Start the lunge mechanic
     }
 
-    void RepeatAttack() {
+    void RepeatAttack()
+    {
         StartCoroutine(Attack());
     }
 
-    IEnumerator Attack() {
-        foreach (Weapon weapon in weapons) {
+    IEnumerator Attack()
+    {
+        foreach (Weapon weapon in weapons)
+        {
             weapon.Attack();
             yield return new WaitForSeconds(delayBetweenAttacks);
         }
     }
+
     void Update()
     {
         // Move the enemy towards the player if the player is not in attack range
         float distanceToPlayer = Vector2.Distance(transform.position, target.position);
-        if (distanceToPlayer <= attackRange && distanceToPlayer > closeEnough) {
+        if (!isLunging && distanceToPlayer > closeEnough) // Only move if not lunging
+        {
             agent.SetDestination(target.position);
         }
 
         float rotation = Mathf.Atan2(agent.velocity.y, agent.velocity.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rotation - 90);
-        // if (distanceToPlayer > attackRange)
-        {
-            // // Face towards the player (rotate only on the Z axis)
-            // Vector2 direction = (playerTransform.position - transform.position).normalized;
-            // float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            // transform.rotation = Quaternion.Euler(0, 0, angle - 90); // Rotate on Z-axis
+    }
 
-            // // Move towards the player
-            // transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, followSpeed * Time.deltaTime);
+    IEnumerator HandleLunge()
+    {
+        while (true) // Continuously run this coroutine
+        {
+            // Wait for a random time before starting the next lunge
+            float lungeCooldown = Random.Range(minLungeCooldown, maxLungeCooldown);
+            yield return new WaitForSeconds(lungeCooldown);
+
+            // Start lunging
+            isLunging = true;
+            agent.speed = lungeSpeed; // Increase speed during lunge
+
+            // Lunge duration
+            yield return new WaitForSeconds(lungeDuration);
+
+            // Reset speed and stop lunging
+            agent.speed = followSpeed;
+            isLunging = false;
         }
     }
 }
