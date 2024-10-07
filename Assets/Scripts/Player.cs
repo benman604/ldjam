@@ -24,6 +24,8 @@ public class Player : Character
     public CharacterSFX characterSFX;
     public float timeBetweenSteps = 0.75f;
 
+    public UITextScroller textScroller;
+
     float staminaCooldown = 2f;
     bool isSprinting = false;
 
@@ -168,6 +170,7 @@ public class Player : Character
     {
         numFlowers++;
         Debug.Log("Flowers collected: " + numFlowers);
+        textScroller.SetLines(new List<string> { numFlowers + "/4 flowers collected" });
 
         // Check if 4 flowers are collected and load Victory scene
         if (numFlowers >= 4)
