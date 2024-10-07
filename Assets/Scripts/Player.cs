@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,9 +24,10 @@ public class Player : Character
 
     public float staminaRegenRate = 0.5f;
     public float staminaSprintingCost = 5f;
-    bool isSprinting = false;
+    public float notGoingForwardMultiplier = 0.5f;
 
     float staminaCooldown = 2f;
+    bool isSprinting = false;
 
     // Health Bar UI Reference (now using Slider)
     public Slider healthBar; // Reference to the health bar Slider
@@ -52,17 +54,16 @@ public class Player : Character
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
 
+        float movementAngle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
+        float angleDiff = Mathf.DeltaAngle(angle, movementAngle);
+        bool isMovingForward = Math.Abs(angleDiff) >= 90;
+        float _speed = speed * (isMovingForward ? notGoingForwardMultiplier : 1f);
+
         if (movement.magnitude > 0 || transform.rotation != rotation) {
-            // animator.speed = 1;
             animationSwitcher.SetAnimation("walking");
         } else {
-            // animator.speed = 0;
             animationSwitcher.SetAnimation("idle");
         }
-
-        // if (transform.rotation != rotation) {
-        //     animator.speed = 2;
-        // }
 
         Vector3 mouseScreenPosition = Input.mousePosition;
         mouseScreenPosition.z = Camera.main.nearClipPlane; 
@@ -72,11 +73,10 @@ public class Player : Character
 
         // Stamina logic
         bool usingStamina = false;
-        float _speed = speed;
         isSprinting = false;
         if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)
         {
-            _speed = speedSprinting;
+            _speed = speedSprinting * (isMovingForward ? notGoingForwardMultiplier : 1f);
             stamina -= staminaSprintingCost;
             usingStamina = true;
             isSprinting = true;
