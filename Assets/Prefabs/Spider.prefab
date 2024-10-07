@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.53333336}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -169,8 +169,8 @@ Transform:
   m_GameObject: {fileID: 2583591240293569156}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.94, y: -5.3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.9309, y: -5.2363, z: -1.4054}
+  m_LocalScale: {x: 1.9104099, y: 1.9104099, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6563948675422723248}
@@ -247,9 +247,9 @@ MonoBehaviour:
   isDead: 0
   weapons:
   - {fileID: 7172254256485038527}
-  attackEvery: 2
+  attackEvery: 0.5
   delayBetweenAttacks: 0.5
-  followSpeed: 0.5
+  followSpeed: 2.4
   attackRange: 5
   closeEnough: 0.1
   target: {fileID: 0}
