@@ -21,7 +21,6 @@ public class Player : Character
     public float staminaRegenRate = 0.5f;
     public float staminaSprintingCost = 5f;
     public float notGoingForwardMultiplier = 0.5f;
-    public CharacterSFX characterSFX
 
     float staminaCooldown = 2f;
     bool isSprinting = false;
@@ -120,8 +119,6 @@ public class Player : Character
     // Override TakeDamage to show health updates
     public override void TakeDamage(int damage)
     {
-        characterSFX.PlayDamageSound();
-
         base.TakeDamage(damage); // Call the base class method
         UpdateHealthBar(); // Update the health bar display after taking damage
     }
