@@ -6,6 +6,7 @@ public class CharacterSFX : MonoBehaviour
 {
     AudioSource audioSource;
     public AudioClip biteSound;
+    public AudioClip aoeSound;
     public AudioClip dashSound;
     public AudioClip damageSound;
     public AudioClip[] moveSound;
@@ -28,6 +29,11 @@ public class CharacterSFX : MonoBehaviour
     public void PlayDamageSound()
     {
         audioSource.PlayOneShot(damageSound);
+    }
+
+    public void PlayAOESound()
+    {
+        audioSource.PlayOneShot(aoeSound);
     }
 
     public void PlayMoveSound()

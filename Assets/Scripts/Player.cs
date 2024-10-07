@@ -107,17 +107,15 @@ public class Player : Character
 
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E))
         {
-            weapons[0].Attack();
-
-
-            if (weapons[0].CanAttack() == true)
-            {
+            if (weapons[0].Attack()) {
                 characterSFX.PlayBiteSound();
             }
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetMouseButtonDown(1))
         {
-            weapons[1].Attack();
+            if (weapons[1].Attack()) {
+                characterSFX.PlayAOESound();
+            }
         }
 
         staminaBar.stamina = stamina;
@@ -143,6 +141,8 @@ public class Player : Character
     // Override TakeDamage to show health updates
     public override void TakeDamage(int damage)
     {
+        characterSFX.PlayDamageSound();
+
         base.TakeDamage(damage); // Call the base class method
         UpdateHealthBar(); // Update the health bar display after taking damage
     }

@@ -6,12 +6,12 @@ public class Spit : Weapon
     public float projectileSpeed = 10f;
     public float maxDistance = 10f;
 
-    public override void Attack()
+    public override bool Attack()
     {
         if (!CanAttack())
         {
             Debug.Log("Attack on cooldown!");
-            return;
+            return false;
         }
 
         Debug.Log($"{weaponName} attacked!");
@@ -21,5 +21,6 @@ public class Spit : Weapon
         projectileScript.Initialize(damage, projectileSpeed, maxDistance, parent);
 
         lastAttackTime = Time.time;
+        return true;
     }
 }

@@ -11,12 +11,12 @@ public class Melee : Weapon
         attackCollider = GetComponent<Collider2D>();
     }
 
-    public override void Attack()
+    public override bool Attack()
     {
         if (!CanAttack())
         {
             Debug.Log("Attack on cooldown!");
-            return;
+            return false;
         }
 
         Debug.Log($"{weaponName} attacked!");
@@ -33,5 +33,6 @@ public class Melee : Weapon
         }
 
         lastAttackTime = Time.time;
+        return true;
     }
 }

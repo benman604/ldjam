@@ -23,7 +23,7 @@ public abstract class Weapon : MonoBehaviour
         return Time.time - lastAttackTime >= cooldown;
     }
 
-    public abstract void Attack();
+    public abstract bool Attack();
 
     protected virtual void Update()
     {
