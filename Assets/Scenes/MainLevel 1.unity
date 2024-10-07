@@ -453,6 +453,10 @@ PrefabInstance:
       propertyPath: m_PointLightOuterRadius
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2745697296893109837, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: attackDuration
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 2981203804184270635, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -528,6 +532,10 @@ PrefabInstance:
     - target: {fileID: 6708891753690803237, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742288022148415795, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_Color.a
+      value: 0.7607843
       objectReference: {fileID: 0}
     - target: {fileID: 8942655095741822654, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: stamina
