@@ -454,6 +454,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2745697296893109837, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: cooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745697296893109837, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: attackDuration
       value: 0.05
       objectReference: {fileID: 0}
@@ -572,6 +576,14 @@ PrefabInstance:
     - target: {fileID: 8942655095741822654, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: staminaSprintingCost
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170521808428725713, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170521808428725713, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
