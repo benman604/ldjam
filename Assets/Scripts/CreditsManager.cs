@@ -33,6 +33,6 @@ public class CreditsManager : MonoBehaviour
         yield return new WaitForSeconds(delayBeforeTransition);
         
         // Load the Victory scene
-        SceneManager.LoadScene("Victory"); // Replace with your actual Victory scene name
+        SceneManager.LoadScene("Intro"); // Replace with your actual Victory scene name
     }
 }
