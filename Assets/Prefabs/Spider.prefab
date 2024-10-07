@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 2272452423610657759}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.01, z: 2}
-  m_LocalScale: {x: 3.4553928, y: 3.4553928, z: 3.4553928}
+  m_LocalPosition: {x: -0.01, y: -0.07, z: 2}
+  m_LocalScale: {x: 0.700009, y: 0.70019555, z: 3.4553928}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7355510358842231159}
@@ -243,6 +243,7 @@ MonoBehaviour:
   health: 50
   maxHealth: 100
   attackDamage: 10
+  isDead: 0
   weapons:
   - {fileID: 7172254256485038527}
   attackEvery: 2
