@@ -14,6 +14,8 @@ public class Enemy : Character
     public float lungeDuration = 0.25f; // How long the lunge lasts
     public float minLungeCooldown = 2f; // Minimum time before next lunge
     public float maxLungeCooldown = 5f; // Maximum time before next lunge
+    public SpiderSFX spiderSFX;
+    public float timeBetweenSteps = 1.492f;
 
     private bool isLunging = false;
 
@@ -28,6 +30,8 @@ public class Enemy : Character
             Debug.LogError("No weapons assigned to the enemy!");
             return;
         }
+
+        StartCoroutine(PlayAudioIfWalking());
         InvokeRepeating("RepeatAttack", 1f, attackEvery);
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.updateRotation = false;
@@ -35,6 +39,19 @@ public class Enemy : Character
         agent.speed = followSpeed;
 
         StartCoroutine(HandleLunge()); // Start the lunge mechanic
+    }
+
+    
+    public override void TakeDamage(int damage)
+    {
+        spiderSFX.PlayDamageSound();
+
+        base.TakeDamage(damage); // Call the base class method
+    }
+
+    public override void Die() {
+        spiderSFX.PlayDeathSound();
+        base.Die();
     }
 
     void RepeatAttack()
@@ -64,6 +81,14 @@ public class Enemy : Character
         transform.rotation = Quaternion.Euler(0, 0, rotation - 90);
     }
 
+    IEnumerator PlayAudioIfWalking() {
+
+        spiderSFX.PlayMoveSound();
+
+        yield return new WaitForSeconds(timeBetweenSteps);
+        StartCoroutine(PlayAudioIfWalking());
+    }
+
     IEnumerator HandleLunge()
     {
         while (true) // Continuously run this coroutine
@@ -74,6 +99,7 @@ public class Enemy : Character
 
             // Start lunging
             isLunging = true;
+            spiderSFX.PlayDashSound();
             agent.speed = lungeSpeed; // Increase speed during lunge
 
             // Lunge duration
@@ -82,6 +108,7 @@ public class Enemy : Character
             // Reset speed and stop lunging
             agent.speed = followSpeed;
             isLunging = false;
+
         }
     }
 }
