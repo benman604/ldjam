@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; // Make sure to include this for using UI components
 
 public class Player : Character
 {
@@ -12,6 +13,7 @@ public class Player : Character
     // Animator animator;
     AnimationSwitcher animationSwitcher;
 
+    // Stamina Variables
     public float speedSprinting = 9f;
     public float stamina = 100f;
     public float maxStamina = 100f;
@@ -23,15 +25,17 @@ public class Player : Character
 
     float staminaCooldown = 2f;
 
-    // Start is called before the first frame update
+    // Health Bar UI Reference (now using Slider)
+    public Slider healthBar; // Reference to the health bar Slider
+
     protected override void Start()
     {
         base.Start();
         // animator = GetComponent<Animator>();
         animationSwitcher = GetComponent<AnimationSwitcher>();
+        UpdateHealthBar();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isDead) {
@@ -64,10 +68,12 @@ public class Player : Character
         Vector2 targetPosition = transform.position + 0.2f * (mouseWorldPosition - transform.position);
         Camera.main.transform.position = new Vector3(targetPosition.x, targetPosition.y, Camera.main.transform.position.z);
 
+        // Stamina logic
         bool usingStamina = false;
         float _speed = speed;
         isSprinting = false;
-        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0) {
+        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)
+        {
             _speed = speedSprinting;
             stamina -= staminaSprintingCost;
             usingStamina = true;
@@ -76,13 +82,16 @@ public class Player : Character
 
         rb.velocity = movement * _speed;
 
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0)) 
+        {
             weapons[0].Attack();
         }
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
             weapons[1].Attack();
         }
-        if (Input.GetKeyDown(KeyCode.Q)) {
+        if (Input.GetKeyDown(KeyCode.Q)) 
+        {
             weapons[2].Attack();
         }
 
@@ -102,11 +111,22 @@ public class Player : Character
             staminaCooldown = 1f;
         }
 
+        // Update health bar
+        UpdateHealthBar();
     }
 
-    public override void TakeDamage(int damage) {
-        if (!isSprinting) {
-            base.TakeDamage(damage);
+    // Override TakeDamage to show health updates
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage); // Call the base class method
+        UpdateHealthBar(); // Update the health bar display after taking damage
+    }
+
+    private void UpdateHealthBar()
+    {
+        if (healthBar != null)
+        {
+            healthBar.value = (float)health / maxHealth; // Update health bar Slider based on health
         }
     }
 
