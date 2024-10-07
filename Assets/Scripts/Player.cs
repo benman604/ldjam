@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; // Make sure to include this for using UI components
+using UnityEngine.UI;
 
 public class Player : Character
 {
@@ -13,10 +11,8 @@ public class Player : Character
     Vector2 movement;
     public float rotationDegreesPerSecond = 180f;
 
-    // Animator animator;
     AnimationSwitcher animationSwitcher;
 
-    // Stamina Variables
     public float speedSprinting = 9f;
     public float stamina = 100f;
     public float maxStamina = 100f;
@@ -32,6 +28,9 @@ public class Player : Character
     // Health Bar UI Reference (now using Slider)
     public Slider healthBar; // Reference to the health bar Slider
 
+    // Flower collection counter
+    public int numFlowers = 0; // Counter for the number of flowers
+
     protected override void Start()
     {
         base.Start();
@@ -42,7 +41,8 @@ public class Player : Character
 
     void Update()
     {
-        if (isDead) {
+        if (isDead)
+        {
             return;
         }
         Vector2 mouseToChar = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
@@ -56,17 +56,20 @@ public class Player : Character
 
         float movementAngle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
         float angleDiff = Mathf.DeltaAngle(angle, movementAngle);
-        bool isMovingForward = Math.Abs(angleDiff) >= 90;
+        bool isMovingForward = Mathf.Abs(angleDiff) >= 90;
         float _speed = speed * (isMovingForward ? notGoingForwardMultiplier : 1f);
 
-        if (movement.magnitude > 0 || transform.rotation != rotation) {
+        if (movement.magnitude > 0 || transform.rotation != rotation)
+        {
             animationSwitcher.SetAnimation("walking");
-        } else {
+        }
+        else
+        {
             animationSwitcher.SetAnimation("idle");
         }
 
         Vector3 mouseScreenPosition = Input.mousePosition;
-        mouseScreenPosition.z = Camera.main.nearClipPlane; 
+        mouseScreenPosition.z = Camera.main.nearClipPlane;
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
         Vector2 targetPosition = transform.position + 0.2f * (mouseWorldPosition - transform.position);
         Camera.main.transform.position = new Vector3(targetPosition.x, targetPosition.y, Camera.main.transform.position.z);
@@ -84,13 +87,14 @@ public class Player : Character
 
         rb.velocity = movement * _speed;
 
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0))
+        {
             weapons[0].Attack();
         }
-        if (Input.GetKeyDown(KeyCode.Q)) {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
             weapons[1].Attack();
         }
-
 
         staminaBar.stamina = stamina;
 
@@ -127,10 +131,37 @@ public class Player : Character
         }
     }
 
-    public override void Die() {
+    public override void Die()
+    {
         animationSwitcher.SetAnimation("die");
         isDead = true;
         Debug.Log("Game Over!");
         SceneManager.LoadScene("Game Over");
+    }
+
+    // Method to increase flower count
+    public void IncreaseFlowerCount()
+    {
+        numFlowers++;
+        Debug.Log("Flowers collected: " + numFlowers);
+
+        // Check if 4 flowers are collected and load Victory scene
+        if (numFlowers >= 4)
+        {
+            SceneManager.LoadScene("Victory");
+        }
+    }
+
+    // Detect collisions with flower sprites
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Flower")) // Ensure your flower sprites have this tag
+        {
+            // Increase the flower count
+            IncreaseFlowerCount();
+            
+            // Destroy the flower GameObject
+            Destroy(other.gameObject);
+        }
     }
 }
