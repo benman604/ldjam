@@ -87,7 +87,7 @@ public class Player : Character
 
         rb.velocity = movement * _speed;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E))
         {
             weapons[0].Attack();
         }
