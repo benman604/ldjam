@@ -982,6 +982,10 @@ PrefabInstance:
       value: 0.7607843
       objectReference: {fileID: 0}
     - target: {fileID: 8942655095741822654, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942655095741822654, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: isDead
       value: 0
       objectReference: {fileID: 0}
@@ -993,6 +997,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 936536260}
+    - target: {fileID: 8942655095741822654, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
+      propertyPath: maxHealth
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8942655095741822654, guid: 1acfde5f8fa864772a6e061b1d544f12, type: 3}
       propertyPath: dodgeSpeed
       value: 20
