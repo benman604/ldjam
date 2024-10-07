@@ -206,7 +206,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 633001017}
-        m_TargetAssemblyTypeName: PlayAgainHandler, Assembly-CSharp
+        m_TargetAssemblyTypeName: LoadCredits, Assembly-CSharp
         m_MethodName: LoadGameScene
         m_Mode: 1
         m_Arguments:
@@ -433,7 +433,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 633001015}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7bb112752b16432382df34830c86690, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f1b4495fec21449ea81f9f061f58110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &646977859
@@ -874,7 +874,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Play Again
+  m_text: Continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

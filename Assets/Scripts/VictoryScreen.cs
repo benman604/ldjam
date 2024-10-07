@@ -10,6 +10,7 @@ public class VictoryScreen : MonoBehaviour
         if (GameTimer.Instance != null)
         {
             float finalTime = GameTimer.Instance.GetElapsedTime();
+            Debug.Log("Display Time Called");
             DisplayTime(finalTime);
         }
     }
@@ -18,6 +19,7 @@ public class VictoryScreen : MonoBehaviour
     {
         int minutes = Mathf.FloorToInt(time / 60);
         int seconds = Mathf.FloorToInt(time % 60);
+        Debug.Log("Time");
         timerText.text = string.Format("Time: {0:00}:{1:00}", minutes, seconds);
     }
 }
