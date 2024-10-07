@@ -1038,6 +1038,7 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   attackDamage: 10
+  isDead: 0
   weapons:
   - {fileID: 2745697296893109837}
   - {fileID: 4827438965692627009}
@@ -1051,6 +1052,7 @@ MonoBehaviour:
   staminaBar: {fileID: 0}
   staminaRegenRate: 0.5
   staminaSprintingCost: 0.1
+  healthBar: {fileID: 0}
 --- !u!50 &1740419584217477308
 Rigidbody2D:
   serializedVersion: 4
@@ -1160,7 +1162,10 @@ MonoBehaviour:
   animationEntries:
   - animationName: idle
     controller: {fileID: 9100000, guid: 4c5840b3433f342039c58eef41069872, type: 2}
+    speed: 0.5
   - animationName: walking
     controller: {fileID: 9100000, guid: 49eb41d5b671a4cb8935d71e894bff41, type: 2}
+    speed: 1
   - animationName: die
     controller: {fileID: 9100000, guid: 88c837e8c555d4b71b3320e6930645f3, type: 2}
+    speed: 1

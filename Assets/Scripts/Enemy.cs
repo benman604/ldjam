@@ -7,9 +7,9 @@ public class Enemy : Character
 {   
     public float attackEvery = 2f;
     public float delayBetweenAttacks = 0.5f;
-    public Transform playerTransform; // Reference to the player's position
     public float followSpeed = 0.5f;    // Speed at which the enemy follows the player
     public float attackRange = 1.5f;  // Distance at which the enemy stops following and starts attacking
+    public float closeEnough = 0.1f;  // Distance at which the enemy is close enough to the player
 
     [SerializeField] Transform target;
 
@@ -27,6 +27,7 @@ public class Enemy : Character
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        agent.speed = followSpeed;
     }
 
     void RepeatAttack() {
@@ -42,8 +43,13 @@ public class Enemy : Character
     void Update()
     {
         // Move the enemy towards the player if the player is not in attack range
-        // float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
-        agent.SetDestination(target.position);
+        float distanceToPlayer = Vector2.Distance(transform.position, target.position);
+        if (distanceToPlayer <= attackRange && distanceToPlayer > closeEnough) {
+            agent.SetDestination(target.position);
+        }
+
+        float rotation = Mathf.Atan2(agent.velocity.y, agent.velocity.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rotation - 90);
         // if (distanceToPlayer > attackRange)
         {
             // // Face towards the player (rotate only on the Z axis)

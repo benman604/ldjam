@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.01, y: -0.07, z: 2}
-  m_LocalScale: {x: 0.700009, y: 0.70019555, z: 3.4553928}
+  m_LocalScale: {x: 1.485769, y: 1.486165, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7355510358842231159}
@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 852828208420822592}
   - component: {fileID: 2603426242416636595}
   - component: {fileID: 7228145079367347452}
+  - component: {fileID: 3317739316237699350}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -248,9 +249,10 @@ MonoBehaviour:
   - {fileID: 7172254256485038527}
   attackEvery: 2
   delayBetweenAttacks: 0.5
-  playerTransform: {fileID: 0}
   followSpeed: 0.5
-  attackRange: 1.5
+  attackRange: 5
+  closeEnough: 0.1
+  target: {fileID: 0}
 --- !u!61 &2603426242416636595
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -317,3 +319,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!195 &3317739316237699350
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2583591240293569156}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
