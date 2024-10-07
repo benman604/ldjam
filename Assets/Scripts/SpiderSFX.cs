@@ -9,6 +9,7 @@ public class SpiderSFX : MonoBehaviour
     public AudioClip dashSound;
     public AudioClip damageSound;
     public AudioClip walkSound;
+    public AudioClip deathSound;
 
     void Start()
     {
@@ -30,8 +31,12 @@ public class SpiderSFX : MonoBehaviour
         audioSource.PlayOneShot(damageSound);
     }
 
-    public void PlayWalkSound()
+    public void PlayMoveSound()
     {
         audioSource.PlayOneShot(walkSound);
+    }
+
+    public void PlayDeathSound() {
+        audioSource.PlayOneShot(deathSound);
     }
 }
