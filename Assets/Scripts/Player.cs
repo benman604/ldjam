@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+
 using UnityEngine;
 using UnityEngine.UI; // Make sure to include this for using UI components
 
@@ -134,5 +136,6 @@ public class Player : Character
         animationSwitcher.SetAnimation("die");
         isDead = true;
         Debug.Log("Game Over!");
+        SceneManager.LoadScene("Game Over");
     }
 }
